@@ -39,7 +39,7 @@ public class Main {
         //
         //        switch (estacion) {
         //            case 1:
-        //                System.out.println("Primavera") ;
+                        System.out.println("Primavera") ;
         //                break;
         //            case 2:
         //                System.out.println("Verano");
@@ -85,8 +85,8 @@ public class Main {
 
         // 4. MERCERIA
 
-        //        Scanner keyboard = new Scanner(System.in);
-        //
+                Scanner keyboard = new Scanner(System.in);
+
         //        System.out.println("Numero de productos:");
         //        int numProducts = keyboard.nextInt();
         //        System.out.println("Costo total:");
@@ -118,7 +118,7 @@ public class Main {
 
         // 5.1 Exercise - 4:05:48 time video
 //        Realizar un programa que simule el control de acceso indroduciendo un valor numerico por teclado
-//        teniendo en cuenta que solo son tres posibilidades de fallo
+//        teniendo en cuenta que solo son tres posibilidades de fallo (check)
 //        controlar tambien que sean de 4 digitos que la suma de los digitos del medio sea un numero par
 //        ojo qur solo usando programacion estructurada osea qe no le meta arrays dale
 //        solo con lo basico nomas si cumple todo el control imprime "Acceso Permitido#
@@ -126,38 +126,65 @@ public class Main {
 //        nada de arrays los String son arrays es un dato numerico un int seria es un arrays de caracteres
 //        hay un algoritmo para sacar los digitos
 
-//        boolean isNotCorrect = true;
-//        int failCounts = 0;
-//        int MAX_DIGITS = 4;
-//        int MAX_CHANCE = 3;
-//        int code;
-//        int digits = 0;
+        //validate 4 digits (check)
+        // 3 intentos (check)
+        // suma de los 2 numeros del medio deben ser pares (check)
 
-//        Scanner keyboard = new Scanner(System.in);
-
-//        while (code > 0) {
-//            code /= 10;
-//            digits++;
-//        }
-
-//        System.out.println(digits);
-
-//        while (isNotCorrect) {
-//            if (res > 0) {
-//                digits += 1;
-//            } else {
-//                failCounts += 1;
-//            }
+//        validateUser();
+//        System.out.println(getDigit(2,9712));
 //
-//            while (res > 0) {
-//
-//            }
+    }
+
+    public static void validateUser() {
+
+        boolean isNotCorrect = true;
+        int failCounts = 0;
+        int MAX_DIGITS = 4;
+        int MAX_CHANCE = 3;
+        int code;
+        int digits = 0;
+        boolean isEven = false;
+
+        Scanner keyboard = new Scanner(System.in);
+        code = keyboard.nextInt();
+
+
+        isEven = (getDigit(2, code) + getDigit(3, code)) % 2 == 0;
+
+        if (isEven) {
+            System.out.println("Números intermedio no pares");
+        }
+
+        while (code > 0) {
+            code /= 10;
+            System.out.println(code);
+            digits++;
+        }
+
+
+        if (code != MAX_DIGITS) {
+            System.out.println("Only four Digits");
+        }
+
+        System.out.println(digits);
+
+//        while (failCounts <=3) {
 //
 //            // el numero de intentos debe de ser igual o menor a 3
 //            if (failCounts > 3) {
 //                System.out.println("Acceso bloqueado");
 //                isNotCorrect = false;
 //            }
+//            failCounts++;
 //        }
+    }
+
+    public static int getDigit(int position, int number) {
+
+        for (int i = 1; i < position; i++) {
+            number /= 10;
+
+        }
+        return  number%10;
     }
 }
