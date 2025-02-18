@@ -1,3 +1,6 @@
+import library.Book;
+
+import javax.sound.midi.Soundbank;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -39,7 +42,7 @@ public class Main {
         //
         //        switch (estacion) {
         //            case 1:
-                        System.out.println("Primavera") ;
+//        System.out.println("Primavera");
         //                break;
         //            case 2:
         //                System.out.println("Verano");
@@ -85,7 +88,7 @@ public class Main {
 
         // 4. MERCERIA
 
-                Scanner keyboard = new Scanner(System.in);
+//        Scanner keyboard = new Scanner(System.in);
 
         //        System.out.println("Numero de productos:");
         //        int numProducts = keyboard.nextInt();
@@ -126,65 +129,102 @@ public class Main {
 //        nada de arrays los String son arrays es un dato numerico un int seria es un arrays de caracteres
 //        hay un algoritmo para sacar los digitos
 
-        //validate 4 digits (check)
-        // 3 intentos (check)
-        // suma de los 2 numeros del medio deben ser pares (check)
+        // validate 4 digits (x)
+        // 3 intentos (x)
+        // suma de los 2 numeros del medio deben ser pares (x)
 
 //        validateUser();
-//        System.out.println(getDigit(2,9712));
+
+        // 6. Arrays and matrices
+
+//        String names [] = new String[8];
+//        Scanner scanner = new Scanner(System.in);
 //
-    }
-
-    public static void validateUser() {
-
-        boolean isNotCorrect = true;
-        int failCounts = 0;
-        int MAX_DIGITS = 4;
-        int MAX_CHANCE = 3;
-        int code;
-        int digits = 0;
-        boolean isEven = false;
-
-        Scanner keyboard = new Scanner(System.in);
-        code = keyboard.nextInt();
-
-
-        isEven = (getDigit(2, code) + getDigit(3, code)) % 2 == 0;
-
-        if (isEven) {
-            System.out.println("Números intermedio no pares");
-        }
-
-        while (code > 0) {
-            code /= 10;
-            System.out.println(code);
-            digits++;
-        }
-
-
-        if (code != MAX_DIGITS) {
-            System.out.println("Only four Digits");
-        }
-
-        System.out.println(digits);
-
-//        while (failCounts <=3) {
-//
-//            // el numero de intentos debe de ser igual o menor a 3
-//            if (failCounts > 3) {
-//                System.out.println("Acceso bloqueado");
-//                isNotCorrect = false;
-//            }
-//            failCounts++;
+//        for (int i = 0; i < names.length; i++) {
+//            String name = scanner.next();
+//            names[i] = name;
 //        }
+//
+//        for (int i = 0; i < names.length; i++) {
+//            System.out.println("Pos: " + i + " " + names[i]);
+//        }
+
+
+        // 7. POO
+
+
+        // create a new class
+        Book biblia = new Book("biblia", "Jesucito lindo", "historia, ficcion", 50);
+
+
+
+        // TODO: Topics before Spring Boot
+//        Fundamental Concepts
+//        Classes and Objects – Defining classes, creating objects, and using constructors.
+//        Encapsulation – Using access modifiers (private, public, protected) and getter/setter methods.
+//        Inheritance – Extending classes (extends keyword) and method overriding.
+//        Polymorphism – Method overloading and method overriding.
+//        Abstraction – Using abstract classes and interfaces.
+
+//        Advanced OOP Concepts
+//        Composition vs. Inheritance – When to use composition instead of inheritance.
+//        Interfaces vs. Abstract Classes – Differences and best practices.
+//        Inner Classes – Static and non-static inner classes.
+//        Final Keyword – Final classes, methods, and variables.
+//        Static vs. Instance Members – Differences and usage.
+
+//        Design Principles & Patterns
+//        SOLID Principles – Best practices for designing maintainable code.
+//        Factory Pattern – Creating objects without specifying exact classes.
+//        Singleton Pattern – Ensuring only one instance of a class exists.
+//        Observer Pattern – Implementing event-driven programming.
+//        Dependency Injection – Loose coupling between objects.
     }
 
-    public static int getDigit(int position, int number) {
-
-        for (int i = 1; i < position; i++) {
-            number /= 10;
-
-        }
-        return  number%10;
-    }
+//    public static  void validateUser() {
+//
+//        int failCounts = 0;
+//        Scanner keyboard = new Scanner(System.in);
+//
+//        while (failCounts < 3) {
+//            System.out.println("Introduce el codigo (4 digitos): ");
+//            int code = keyboard.nextInt();
+//
+//            if (validateCode(code)) {
+//                System.out.println("Acceso permitido");
+//                break;
+//            } else {
+//                failCounts++;
+//                System.out.println("Acceso incorrecto, tienes " + failCounts + " intentos de 3");
+//            }
+//        }
+//    }
+//
+//    public static boolean validateCode(int code) {
+//        int newCode = code;
+//        int digits = 0;
+//
+//        while (newCode > 0) {
+//            newCode /= 10;
+//            digits++;
+//        }
+//
+//        if (digits != 4) {
+//            return false;
+//        }
+//
+//        if ((getDigit(2, code) + getDigit(3, code)) % 2 != 0) {
+//            return false;
+//        };
+//
+//        return true;
+//    }
+//
+//    public static int getDigit(int position, int number) {
+//        for (int i = 1; i < position; i++) {
+//            number /= 10;
+//
+//        }
+//        return  number%10;
+//    }
 }
