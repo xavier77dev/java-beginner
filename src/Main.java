@@ -1,4 +1,8 @@
 import library.Book;
+import library.BorrowingRecord;
+import library.Member;
+import library.MembersVip;
+import org.w3c.dom.ls.LSOutput;
 
 import javax.sound.midi.Soundbank;
 import java.util.Scanner;
@@ -6,8 +10,34 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-
     public static void main(String[] args) {
+        Book book1 = new Book("1984", "George Orwell", "Dístopía", 15);
+        Book book2 = new Book("The Hobbit", "J.R.R. Tolkien", "Fantasía", 8);
+        Book book3 = new Book("To Kill a Mockingbird", "Harper Lee", "Ficción Clásica", 12);
+
+        Member user1 = new Member("Juan","12346", "Pérez", "12345678");
+        Member user2 = new Member("María","1111", "González", "87654321");
+        Member user3 = new Member("Carlos","89898", "Ramírez", "45678912");
+
+        Book[] booksUser1 = new Book[]{book1, book2, book3};
+
+        BorrowingRecord borrowingfirst = new BorrowingRecord(user1, "11/04/25",booksUser1);
+
+        borrowingfirst.getBorringRecodUser();
+
+        user1.setFirstName("Pablo");
+        System.out.println(user1.getFirstName());
+
+//        MembersVip memberVip1 = new MembersVip("Lopez", "45412", "Fernando", "784512");
+        MembersVip memberVip1 = new MembersVip(user1);
+        System.out.println("----");
+
+        memberVip1.getPassword();
+        System.out.println(memberVip1.getFirstName());
+
+
+
+
         //1. declaration and assignment var
 
         //        int age = 77;
