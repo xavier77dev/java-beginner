@@ -1,39 +1,15 @@
-import library.Book;
-import library.BorrowingRecord;
-import library.Member;
-import library.MembersVip;
-import org.w3c.dom.ls.LSOutput;
+import abstraction.Dog;
+import abstraction.Tv;
+import polymorphism.Boss;
+import polymorphism.Employee;
+import polymorphism.Person;
 
-import javax.sound.midi.Soundbank;
-import java.util.Scanner;
+import java.awt.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Book book1 = new Book("1984", "George Orwell", "Dístopía", 15);
-        Book book2 = new Book("The Hobbit", "J.R.R. Tolkien", "Fantasía", 8);
-        Book book3 = new Book("To Kill a Mockingbird", "Harper Lee", "Ficción Clásica", 12);
-
-        Member user1 = new Member("Juan","12346", "Pérez", "12345678");
-        Member user2 = new Member("María","1111", "González", "87654321");
-        Member user3 = new Member("Carlos","89898", "Ramírez", "45678912");
-
-        Book[] booksUser1 = new Book[]{book1, book2, book3};
-
-        BorrowingRecord borrowingfirst = new BorrowingRecord(user1, "11/04/25",booksUser1);
-
-        borrowingfirst.getBorringRecodUser();
-
-        user1.setFirstName("Pablo");
-        System.out.println(user1.getFirstName());
-
-//        MembersVip memberVip1 = new MembersVip("Lopez", "45412", "Fernando", "784512");
-        MembersVip memberVip1 = new MembersVip(user1);
-        System.out.println("----");
-
-        memberVip1.getPassword();
-        System.out.println(memberVip1.getFirstName());
 
 
 
@@ -181,20 +157,65 @@ public class Main {
 
 
         // 7. POO
+//
+//        Book book1 = new Book("1984", "George Orwell", "Dístopía", 15);
+//        Book book2 = new Book("The Hobbit", "J.R.R. Tolkien", "Fantasía", 8);
+//        Book book3 = new Book("To Kill a Mockingbird", "Harper Lee", "Ficción Clásica", 12);
+//
+//        Member user1 = new Member("Juan","12346", "Pérez", "12345678");
+//        Member user2 = new Member("María","1111", "González", "87654321");
+//        Member user3 = new Member("Carlos","89898", "Ramírez", "45678912");
+//
+//        Book[] booksUser1 = new Book[]{book1, book2, book3};
+//
+//        BorrowingRecord borrowingfirst = new BorrowingRecord(user1, "11/04/25",booksUser1);
+//
+//        borrowingfirst.getBorringRecodUser();
+//
+//        user1.setFirstName("Pablo");
+//        System.out.println(user1.getFirstName());
+//
+////        MembersVip memberVip1 = new MembersVip("Lopez", "45412", "Fernando", "784512");
+//        MembersVip memberVip1 = new MembersVip(user1);
+//        System.out.println("----");
+//
+//        memberVip1.getPassword();
+//        System.out.println(memberVip1.getFirstName());
 
 
         // create a new class
-        Book biblia = new Book("biblia", "Jesucito lindo", "historia, ficcion", 50);
+//        Book biblia = new Book("biblia", "Jesucito lindo", "historia, ficcion", 50);
 
+//        Polymorphism
+//
+//        Person person1 = new Person("miel", 20);
+//
+//        Employee employee1 = new Employee("xavier", 30, 300);
+//
+//        Boss boss1 = new Boss("moon", 40, "director de area de informatica");
+//
+//        person1.showData("Presli");
+//
+//        showPeson(employee1);
 
+        // Abstraction
+        // abtract classes
+
+        Tv tv = new Tv("lg");
+        tv.emitNoise();
+
+        // interfaces
+
+        Dog dog1 = new Dog();
+        dog1.eat();
 
         // TODO: Topics before Spring Boot
 //        Fundamental Concepts
-//        Classes and Objects – Defining classes, creating objects, and using constructors.
-//        Encapsulation – Using access modifiers (private, public, protected) and getter/setter methods.
-//        Inheritance – Extending classes (extends keyword) and method overriding.
-//        Polymorphism – Method overloading and method overriding.
-//        Abstraction – Using abstract classes and interfaces.
+//        Classes and Objects – Defining classes, creating objects, and using constructors. (check)
+//        Encapsulation – Using access modifiers (private, public, protected) and getter/setter methods. (check)
+//        Inheritance – Extending classes (extends keyword) and method overriding.(check)
+//        Polymorphism – Method overloading and method overriding. (check)
+//        Abstraction – Using abstract classes and interfaces. (check)
 
 //        Advanced OOP Concepts
 //        Composition vs. Inheritance – When to use composition instead of inheritance.
@@ -209,6 +230,10 @@ public class Main {
 //        Singleton Pattern – Ensuring only one instance of a class exists.
 //        Observer Pattern – Implementing event-driven programming.
 //        Dependency Injection – Loose coupling between objects.
+    }
+
+    public static void showPeson(Person person) {
+        System.out.println(person);
     }
 
 //    public static  void validateUser() {
